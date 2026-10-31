@@ -1,0 +1,34 @@
+mysql> USE rumahsakittasya3;
+Database changed
+mysql> SHOW TABLES;
++----------------------------+
+| Tables_in_rumahsakittasya3 |
++----------------------------+
+| kunjungan                  |
+| pasien                     |
++----------------------------+
+2 rows in set (0.00 sec)
+
+mysql> DESC pasien;
++--------------+--------------+------+-----+---------+----------------+
+| Field        | Type         | Null | Key | Default | Extra          |
++--------------+--------------+------+-----+---------+----------------+
+| idpasien     | int          | NO   | PRI | NULL    | auto_increment |
+| namapasien   | varchar(100) | NO   |     | NULL    |                |
+| jeniskelamin | varchar(20)  | YES  |     | NULL    |                |
+| alamat       | text         | YES  |     | NULL    |                |
+| nohp         | varchar(15)  | YES  |     | NULL    |                |
++--------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.05 sec)
+
+mysql> DESC kunjungan;
++-------------+--------------+------+-----+---------+----------------+
+| Field       | Type         | Null | Key | Default | Extra          |
++-------------+--------------+------+-----+---------+----------------+
+| idkunjungan | int          | NO   | PRI | NULL    | auto_increment |
+| idpasien    | int          | NO   | MUL | NULL    |                |
+| tanggal     | date         | NO   |     | NULL    |                |
+| keluhan     | varchar(200) | NO   |     | NULL    |                |
+| biaya       | int          | YES  |     | 0       |                |
++-------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.01 sec)
